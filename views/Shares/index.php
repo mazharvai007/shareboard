@@ -1,5 +1,5 @@
 <div class="lead mt-5 text-center mb-5">
-    <a href="<?php echo ROOT_URL; ?>/shares/add" class="btn btn-lg btn-secondary">Share Something</a>
+    <a href="<?php echo ROOT_PATH; ?>shares/add" class="btn btn-lg btn-secondary">Share Something</a>
 </div>
 
 <div class="container">
