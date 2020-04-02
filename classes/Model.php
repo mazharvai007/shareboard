@@ -70,5 +70,28 @@ abstract class Model
     {
         $this->execute();
         return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
-    }    
+    } 
+    
+    /*
+    ****************************
+    * Last Insert Id
+    ****************************
+    */
+
+    public function lastInsertId()
+    {
+        return $this->dbh->lastInsertId();
+    }
+
+    /*
+    ****************************
+    * Single record (Login)
+    ****************************
+    */  
+    
+    public function singleRecord()
+    {
+        $this->execute();
+        return $this->stmt->fetch(PDO::FETCH_ASSOC);
+    }
 }

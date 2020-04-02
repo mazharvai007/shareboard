@@ -2,4 +2,28 @@
 class Users extends Controller
 {
 
+    // Register controller
+    protected function register()
+    {
+        $viewModel = new UserModel();
+        $this->returnView($viewModel->register(), true);
+    }
+
+    // Login controller
+    protected function login()
+    {
+        $viewModel = new UserModel();
+        $this->returnView($viewModel->login(), true);
+    }
+
+    // Logout controller
+    protected function logout()
+    {
+        unset($_SESSION['is_logged_in']);
+        unset($_SESSION['user_data']);
+        session_destroy();
+
+        // Redirect
+        header('Location: ' . ROOT_URL);
+    }
 }

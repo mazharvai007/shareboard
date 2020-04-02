@@ -23,14 +23,24 @@
                 <a class="nav-link" href="<?php echo ROOT_URL; ?>">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo ROOT_URL; ?>/shares">Shares</a>
+                <a class="nav-link" href="<?php echo ROOT_URL; ?>shares">Shares</a>
+            </li>
+
+            <?php if (isset($_SESSION['is_logged_in'])) : ?>
+            <li class="nav-item">
+                <a class="nav-link" href="<?php echo ROOT_URL; ?>">Welcome <?php echo $_SESSION['user_data']['username']; ?></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo ROOT_URL; ?>/login">Login</a>
+                <a class="nav-link" href="<?php echo ROOT_URL; ?>users/logout">Logout</a>
+            </li>            
+            <?php else : ?>
+            <li class="nav-item">
+                <a class="nav-link" href="<?php echo ROOT_URL; ?>users/login">Login</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo ROOT_URL; ?>/register">Reister</a>
+                <a class="nav-link" href="<?php echo ROOT_URL; ?>users/register">Reister</a>
             </li>
+            <?php endif; ?>
         </ul>
         </div>        
     </div>
@@ -41,6 +51,7 @@
 <main role="main" class="flex-shrink-0">
     <div class="container">
     <?php 
+        Messages::display();
         require($view);
     ?>    
     </div>

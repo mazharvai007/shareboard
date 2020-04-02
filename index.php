@@ -1,9 +1,13 @@
 <?php
 
+// Start Session
+session_start();
+
 // Include files
 require('config.php');
 
 // Classes
+require('classes/Messages.php');
 require('classes/Bootstrap.php');
 require('classes/Controller.php');
 require('classes/Model.php');
