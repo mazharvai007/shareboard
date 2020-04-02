@@ -82,4 +82,16 @@ abstract class Model
     {
         return $this->dbh->lastInsertId();
     }
+
+    /*
+    ****************************
+    * Single record (Login)
+    ****************************
+    */  
+    
+    public function singleRecord()
+    {
+        $this->execute();
+        return $this->stmt->fetch(PDO::FETCH_ASSOC);
+    }
 }
