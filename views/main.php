@@ -26,10 +26,10 @@
                 <a class="nav-link" href="<?php echo ROOT_URL; ?>/shares">Shares</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo ROOT_URL; ?>/login">Login</a>
+                <a class="nav-link" href="<?php echo ROOT_URL; ?>/users/login">Login</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo ROOT_URL; ?>/register">Reister</a>
+                <a class="nav-link" href="<?php echo ROOT_URL; ?>/users/register">Reister</a>
             </li>
         </ul>
         </div>        
