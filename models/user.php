@@ -8,8 +8,13 @@ class UserModel extends Model
 
         // Encrypt Password
         $password = md5($user['user_password']);
-
+ 
         if ($user['submit']) {
+
+            if ($user['username'] == '' || $user['user_email'] == '' || $password == '') {
+                Messages::setMessage('Pleae fill in all fields', 'error');
+                return;
+            }            
 
             // Insert into MySQL
             $this->query("INSERT INTO users (username, user_email, user_password) VALUES (:username, :user_email, :user_password) ");
@@ -61,7 +66,7 @@ class UserModel extends Model
                 );
                 header('Location: ' . ROOT_URL . 'shares');
             } else {
-                echo 'Incorrect Login';
+                Messages::setMessage('Incorrect Login', 'error');
             }
         }
 

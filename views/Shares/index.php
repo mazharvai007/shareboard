@@ -1,5 +1,10 @@
+
 <div class="lead mt-5 text-center mb-5">
+    <?php if (isset($_SESSION['is_logged_in'])) : ?>
     <a href="<?php echo ROOT_PATH; ?>shares/add" class="btn btn-lg btn-secondary">Share Something</a>
+    <?php else : ?>
+    <a href="<?php echo ROOT_PATH; ?>users/login" class="btn btn-lg btn-secondary">Login</a>
+    <?php endif; ?>
 </div>
 
 <div class="container">

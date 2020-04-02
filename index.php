@@ -7,6 +7,7 @@ session_start();
 require('config.php');
 
 // Classes
+require('classes/Messages.php');
 require('classes/Bootstrap.php');
 require('classes/Controller.php');
 require('classes/Model.php');

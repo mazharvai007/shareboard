@@ -14,6 +14,12 @@ class ShareModel extends Model
         $post = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
         if ($post['submit']) {
+
+            if ($post['share_title'] == '' || $post['share_body'] == '' || $post['share_link'] == '') {
+                Messages::setMessage('Pleae fill in all fields', 'error');
+                return;
+            }             
+
             // Insert into MySQL
             $this->query("INSERT INTO shares (title, body, link, user_id) VALUES (:title, :body, :link, :user_id) ");
 
