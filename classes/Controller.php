@@ -20,7 +20,7 @@ abstract class Controller
     // View Return
     protected function returnView($viewModel, $fullView)
     {
-        $view = 'views/' . get_class($this) . '/' . $this->action . '.php';
+        $view = 'views/' . strtolower(get_class($this)) . '/' . $this->action . '.php';
 
         if ($fullView) {
             require('views/main.php');
